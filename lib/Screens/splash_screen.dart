@@ -104,11 +104,11 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     _controller = AnimationController(
-      duration: const Duration(seconds: 3),
+      duration: const Duration(milliseconds: 2500),
       vsync: this,
     )..repeat();
 
-    _timer = Timer(const Duration(seconds: 2), () {
+    _timer = Timer(const Duration(seconds: 1), () {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
@@ -136,8 +136,8 @@ class _SplashScreenState extends State<SplashScreen>
             AnimatedBuilder(
               animation: _controller,
               child: const SizedBox(
-                height: 250,
-                width: 250,
+                height: 150,
+                width: 150,
                 child: Center(
                   child: Image(image: AssetImage('assets/images/virus.png')),
                 ),
@@ -158,7 +158,7 @@ class _SplashScreenState extends State<SplashScreen>
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 34,
+                  fontSize: 28,
                   height: 1.1,
                 ),
               ),
